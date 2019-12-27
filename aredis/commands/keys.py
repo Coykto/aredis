@@ -64,9 +64,9 @@ class KeysCommandMixin:
         """
         return await self.execute_command('DUMP', name)
 
-    async def exists(self, *names):
+    async def exists(self, name, *names):
         "Returns an integer indicating how many keys specified by ``names`` exist"
-        return await self.execute_command('EXISTS', *names)
+        return await self.execute_command('EXISTS', name, *names)
 
     async def expire(self, name, time):
         """
